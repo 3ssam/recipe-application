@@ -23,6 +23,17 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private Ingredient ingredient;
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+
     public Long getId() {
         return id;
     }
