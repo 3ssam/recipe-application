@@ -1,5 +1,6 @@
 package mo.springframework.bootstrap;
 
+import lombok.extern.slf4j.Slf4j;
 import mo.springframework.repositories.*;
 import mo.springframework.domain.*;
 import org.springframework.context.ApplicationListener;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.*;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 

@@ -1,5 +1,6 @@
 package mo.springframework.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import mo.springframework.domain.Category;
 import mo.springframework.domain.UnitOfMeasure;
 import mo.springframework.repositories.CategoryRepository;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
 
+@Slf4j
 @Controller
 public class IndexController {
 
