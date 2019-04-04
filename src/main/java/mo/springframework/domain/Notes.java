@@ -1,12 +1,8 @@
 package mo.springframework.domain;
 
-import lombok.Data;
-
-import javax.persistence.Entity;
 import javax.persistence.*;
 
 
-@Data
 @Entity
 public class Notes {
 
@@ -19,4 +15,39 @@ public class Notes {
 
     @Lob
     private String recipeNotes;
+
+    public Notes() {
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public Recipe getRecipe() {
+        return this.recipe;
+    }
+
+    public String getRecipeNotes() {
+        return this.recipeNotes;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    public void setRecipeNotes(String recipeNotes) {
+        this.recipeNotes = recipeNotes;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof Notes;
+    }
+
+    public String toString() {
+        return "Notes(id=" + this.getId() + ", recipe=" + this.getRecipe() + ", recipeNotes=" + this.getRecipeNotes() + ")";
+    }
 }

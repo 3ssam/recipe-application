@@ -1,12 +1,8 @@
 package mo.springframework.domain;
 
-import lombok.Data;
-
 import javax.persistence.*;
-import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 
-@Data
 @Entity
 public class Ingredient {
 
@@ -35,5 +31,45 @@ public class Ingredient {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public BigDecimal getAmount() {
+        return this.amount;
+    }
+
+    public UnitOfMeasure getUnitOfMeasure() {
+        return this.unitOfMeasure;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
+    }
+
+    protected boolean canEqual(final Object other) {
+        return other instanceof Ingredient;
+    }
+
+    public String toString() {
+        return "Ingredient(id=" + this.getId() + ", description=" + this.getDescription() + ", amount=" + this.getAmount() + ", recipe=" + this.getRecipe() + ", unitOfMeasure=" + this.getUnitOfMeasure() + ")";
     }
 }
