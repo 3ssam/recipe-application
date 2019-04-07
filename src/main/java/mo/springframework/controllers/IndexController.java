@@ -32,10 +32,6 @@ public class IndexController {
 
     @RequestMapping({"","/","/Index"})
     public String getIndexPage(Model model){
-//        Optional<Category> category = categoryRepository.findByDescription("fs");
-//        Optional<UnitOfMeasure> unitOfMeasure = unitOfMeasureRepository.findByDescription("Pinch");
-//        System.out.println(category.get().getId());
-//        System.out.println(unitOfMeasure.get().getId());
         model.addAttribute("recipes",recipeService.getRecipes());
         return "Index";
     }
